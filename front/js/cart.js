@@ -83,23 +83,20 @@ const displayTotalPrice = async () => {
     console.log(cart);
     // Calcul du prix total
     let totalPrice = 0;
-
+    let totalQuantity = 0;
     cart.forEach((productInCart) => {
       console.log(productInCart);
+      totalQuantity += parseInt(productInCart.quantity);
       totalPrice +=
         parseInt(productInCart.quantity) *
         PriceMath(productInCart._id, parseInt(productInCart.quantity));
     });
     //Insertion du HTML du prix total après que l'on ait affiché les produits du panier
-    document.getElementById("cartAndFormContainer").insertAdjacentHTML(
-      "afterend",
-      `<div class="cart__price">
-      <p>
-        Total (<span id="totalQuantity">${cart.length}</span> articles) :
-        <span id="totalPrice">${totalPrice}</span> €
-      </p>
-      </div>`
-    );
+    document.getElementById("totalQuantity").innerHTML =
+    totalQuantity
+    document.getElementById("totalPrice").innerHTML =
+    totalPrice
+    ;
   }
 };
 displayTotalPrice();
