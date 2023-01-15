@@ -163,7 +163,7 @@ const addQuantity = async (displayCart) => {
 };
 addQuantity();
 
-// Gestion du formulaire
+// Formulaire
 
 // Récupération des id des différentes parties du formulaire
 const firstName = document.getElementById("firstName");

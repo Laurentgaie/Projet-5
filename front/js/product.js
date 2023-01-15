@@ -27,9 +27,7 @@ const productDisplay = async () => {
 
   document.getElementById("title").innerHTML = `<p>${productData.name}</p>`;
   document.getElementById("price").innerHTML = `<p>${productData.price}</p>`;
-  document.getElementById(
-    "description"
-  ).innerHTML = `<p>${productData.description}</p>`;
+  document.getElementById("description").innerHTML = `<p>${productData.description}</p>`;
 
   // Element HTML <select> permettant de choisir la couleur
   let selectColors = document.getElementById("colors");
@@ -60,15 +58,12 @@ const addProduct = () => {
     let selectedColor = document.getElementById("colors").value;
     let selectedQuantity = document.getElementById("quantity").value;
 
-    ///////////////////////////////////////////////////////////////////////
-
     // On crèe une variable qui va contenir toutes les infos et le prix
 
     productDataWithoutPrice = productData;
     delete productDataWithoutPrice.price;
-    /////////////////////////////////////////////////////////////////
-
-    // on ajoute les key 'color' et quantity' dans 'productData'
+   
+    // on ajoute les clés 'color' et quantity' dans 'productData'
     const productDataWithQuantityAndColor = Object.assign(
       {},
       productDataWithoutPrice,
